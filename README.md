@@ -16,3 +16,12 @@ php -S localhost:8080
 
 Agora você pode acessar o link no navegador e ver o aplicativo rodando.
 
+<h3>Tela de Login:</h3>
+<img src="images/login.png" width="800">
+
+<h3>
+Tela de Cadastro:</h3>
+<img src="images/register.png" width="800">
+
+<h3>Home:</h3>
+<img src="images/home.png" width="800">
