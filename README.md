@@ -16,4 +16,4 @@ php -S localhost:8080
 
 Agora você pode acessar o link no navegador e ver o aplicativo rodando.
 
-<img src="images/login.png">
+<img src="images/login.png" width="800">
