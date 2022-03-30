@@ -1,0 +1,5 @@
+framework
+
+ocultar extensao html das views
+helper de redirect
+funcionalidade para as mensagens de erro/sucesso

@@ -1,0 +1,42 @@
+{{ include('template/header.html') }}
+<div class="content-wrapper-home">
+    <header class="header-home">
+        <div class="logo">
+            <img src="{{url}}/public/site/images/to-do-list.png" width="25">
+            <p>Lista de Tarefas</p>
+        </div>
+        <div class="menu">
+            <a href="{{url}}/tarefa/concluidas"><p>Tarefas Concluidas</p></a>
+            <p>Bem-vindo, {{data['user_data'][1]}}</p>
+            <a href="http://localhost:8080/loggout">Sair</a>
+        </div>
+    </header>
+    <div class="tasks-wrapper">
+        {%if data['tasks'] %}
+        {% for task in data['tasks'] %}
+            <div class="item">
+                <div class="title">
+                    <p>{{task.title}}</p>
+                    <div class="dates">
+                        <p>Adicionado em: {{task.created_at|date("d/m/Y")}}</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a href="{{url}}/tarefa/concluir/{{task.id}}"><img src="{{url}}/public/site/images/check.png" width="15"></a>
+                    <a href="{{url}}/tarefa/excluir/{{task.id}}"><img src="{{url}}/public/site/images/trash.png" width="15"></a>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <div class="item">
+            <div class="title">
+                <p style="font-size: 13px;">Nenhuma tarefa cadastrada. Clique no botão abaixo para cadastrar uma nova tarefa.</p>
+            </div>
+        </div>
+        {% endif %}
+        <div class="item">
+            <a href="{{url}}/tarefa/cadastro"><button class="btn-task">Adicionar Tarefa</button></a>
+        </div>
+    </div>
+</div>
+{{ include('template/footer.html') }}

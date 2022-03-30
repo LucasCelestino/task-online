@@ -1,0 +1,33 @@
+{{ include('template/header.html') }}
+<div class="content-wrapper-home">
+    <header class="header-home">
+        <div class="logo">
+            <img src="{{url}}/public/site/images/to-do-list.png" width="25">
+            <p>Lista de Tarefas</p>
+        </div>
+        <div class="menu">
+            <a href="{{url}}/tarefa/concluidas"><p>Tarefas Concluidas</p></a>
+            <p>Bem-vindo, {{data['user_data'][1]}}</p>
+            <a href="http://localhost:8080/loggout">Sair</a>
+        </div>
+    </header>
+    <div class="tasks-wrapper">
+        <div class="item">
+            <form action="{{url}}/tarefa/store" method="post">
+                <div class="form-group">
+                    <input type="text" name="task" placeholder="Dê um nome para a tarefa...">
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
+            {%if data['success_task'] == true %}
+                <p class="p-success">Tarefa cadastrada com sucesso!</p>
+            {% elseif data['empty_field'] %}
+                <p class="p-error">Preencha o campo antes de continuar.</p>
+            {% endif %}
+        </div>
+        <div class="item">
+            <a href="{{url}}/home">Voltar</a>
+        </div>
+    </div>
+</div>
+{{ include('template/footer.html') }}

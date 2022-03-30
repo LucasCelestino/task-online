@@ -1,0 +1,42 @@
+{{ include('template/header.html') }}
+<div class="content-wrapper-home">
+    <header class="header-home">
+        <div class="logo">
+            <img src="{{url}}/public/site/images/to-do-list.png" width="25">
+            <p>Lista de Tarefas Concluidas</p>
+        </div>
+        <div class="menu">
+            <p></p>
+            <p>Bem-vindo, {{data['user_data'][1]}}</p>
+            <a href="http://localhost:8080/loggout">Sair</a>
+        </div>
+    </header>
+    <div class="tasks-wrapper">
+        {%if data['tasks'] %}
+        {% for task in data['tasks'] %}
+            <div class="item">
+                <div class="title">
+                    <p>{{task.title}}</p>
+                    <div class="dates">
+                        <p>Adicionado em: {{task.created_at|date("d/m/Y")}}</p>
+                        <p>Finalizado em: {{task.updated_at|date("d/m/Y H:i")}}</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a href="{{url}}/tarefa/excluir_completada/{{task.id}}"><img src="{{url}}/public/site/images/trash.png" width="15"></a>
+                </div>
+            </div>
+        {% endfor %}
+        {% else %}
+        <div class="item">
+            <div class="title">
+                <p style="font-size: 13px;">Conclua uma tarefa antes de ver sua lista de tarefas concluidas.</p>
+            </div>
+        </div>
+        {% endif %}
+        <div class="item">
+            <a href="{{url}}/home">Voltar</a>
+        </div>
+    </div>
+</div>
+{{ include('template/footer.html') }}

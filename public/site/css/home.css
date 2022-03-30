@@ -1,0 +1,108 @@
+.content-wrapper-home
+{
+    background-color: #FFF;
+    max-width: 700px;
+    width: 100%;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.tasks-wrapper
+{
+    max-height: 500px !important;
+    height: 100%;
+    overflow-y:auto;
+}
+
+.tasks-wrapper .item
+{
+    display: flex;
+    padding-top: 15px;
+    padding-left: 17px;
+    padding-bottom: 13px;
+    padding-right: 17px;    
+    color: #636363;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #CCC;
+}
+
+.tasks-wrapper .item:last-child
+{
+    border: none;
+}
+
+.tasks-wrapper .item .title .dates
+{
+    font-size: 12px;
+    display: flex;
+    padding: 0;
+}
+
+.tasks-wrapper .item .title .dates p
+{
+    padding-top: 5px !important;
+    margin-right: 10px;
+}
+
+.tasks-wrapper .item .title p:nth-of-type(2)
+{
+    padding-top: 5px;
+    font-size: 12px;
+}
+
+.tasks-wrapper .item .actions a
+{
+    margin-left: 10px;
+}
+
+.btn-task
+{
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #3F6AD8;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.tasks-wrapper .item form .form-group input::placeholder
+{
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+.tasks-wrapper .item form button
+{
+    border: none;
+    padding: 0 15px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFF;
+    background-color: #6200EA;
+}
+
+.tasks-wrapper .item form
+{
+    display: flex;
+}
+
+.tasks-wrapper .item form .form-group input
+{
+    padding: 5px 5px;
+    width: 300px !important;
+    border: 1px solid #CCC;
+    margin-right: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(167, 167, 167);
+    outline: none !important;
+}
+
+.tasks-wrapper .item a
+{
+    text-decoration: none;
+    color: #3F6AD8;
+}
+
+
